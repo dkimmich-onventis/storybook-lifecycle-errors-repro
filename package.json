@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "storybook": "yarn docs:json && start-storybook -p 6006",
+    "build-storybook": "yarn docs:json && build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +28,21 @@
     "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
+    "@angular/elements": "^13.0.2",
+    "@babel/core": "^7.16.0",
+    "@compodoc/compodoc": "^1.1.16",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.4.1",
+    "@storybook/addon-docs": "^6.4.1",
+    "@storybook/addon-essentials": "^6.4.1",
+    "@storybook/addon-links": "^6.4.1",
+    "@storybook/angular": "^6.4.1",
+    "@storybook/builder-webpack5": "^6.4.1",
+    "@storybook/manager-webpack5": "^6.4.1",
     "@types/node": "^12.11.1",
+    "@webcomponents/custom-elements": "^1.5.0",
+    "babel-loader": "^8.2.3",
     "typescript": "~4.4.3"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
